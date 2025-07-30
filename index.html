@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CICADA SYSTEMS | RED TEAM OPS</title>
   <link rel="icon" href="data:,">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root {
       --glow-red: #f54242;
@@ -26,6 +27,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      flex-direction: column;
     }
 
     .frame {
@@ -58,6 +60,7 @@
       line-height: 1.6;
       border: 1px solid var(--glow-red);
       box-shadow: inset 0 0 10px #f5424210;
+      margin-bottom: 2rem;
     }
 
     .terminal::before {
@@ -66,6 +69,46 @@
       margin-bottom: 0.5rem;
       color: #ff8080;
       font-weight: bold;
+    }
+
+    .contact {
+      margin-bottom: 2rem;
+      color: var(--txt-secondary);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    input, textarea, button {
+      font-family: var(--font);
+      font-size: 1rem;
+      padding: 0.5rem;
+      border: 1px solid var(--glow-red);
+      background: #111;
+      color: var(--txt);
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: var(--glow-red);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff6b6b;
+    }
+
+    .cf-turnstile {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
     }
 
     @media (max-width: 600px) {
@@ -91,6 +134,23 @@
       > SIGINT link hardened<br>
       > Exit node rotation in progress...
     </div>
+
+    <div class="contact">
+      <strong>Emergency Support:</strong><br>
+      <a href="mailto:247support@cicadacybersec.com" style="color: var(--txt); text-decoration: none;">
+        247support@cicadacybersec.com
+      </a>
+    </div>
+
+    <form action="https://formspree.io/f/xanbbylk" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Message..." required></textarea>
+
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAABnGhBi_YROiwWOj" data-theme="dark"></div>
+
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 </body>
 </html>
