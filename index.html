@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CICADA SYSTEMS | RED TEAM OPS</title>
-  <link rel="icon" href="data:,">
+  <link rel="icon" href="data:," />
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root {
@@ -148,21 +148,21 @@
 </head>
 <body>
   <div class="frame">
-    <img src="logo.png" alt="CICADA Logo" class="logo">
+    <img src="logo.png" alt="CICADA Logo" class="logo" />
 
     <h1>RED TEAM DRILL ACTIVE</h1>
     <p>
-      CICADA SYSTEMS infrastructure is under live operational lockdown.<br>
+      CICADA SYSTEMS infrastructure is under live operational lockdown.<br />
       Access is restricted to authorized personnel only.
     </p>
 
     <div class="terminal">
-      > INIT RED_TEAM_OPS<br>
-      > Establishing encrypted comms... <span style="color:#0f0">[OK]</span><br>
-      > Beacon handshake validated<br>
-      > Perimeter breach simulation: <span style="color:orange">ACTIVE</span><br>
-      > SOC trace nullified<br>
-      > SIGINT link hardened<br>
+      > INIT RED_TEAM_OPS<br />
+      > Establishing encrypted comms... <span style="color:#0f0">[OK]</span><br />
+      > Beacon handshake validated<br />
+      > Perimeter breach simulation: <span style="color:orange">ACTIVE</span><br />
+      > SOC trace nullified<br />
+      > SIGINT link hardened<br />
       > Exit node rotation in progress...
     </div>
 
@@ -173,16 +173,50 @@
 
     <div class="form-heading">General Enquiries</div>
 
-    <form action="https://formspree.io/f/xanbbylk" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+    <form id="contactForm" method="POST" data-formspree>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="4" placeholder="Message..." required></textarea>
 
       <div class="cf-turnstile" data-sitekey="0x4AAAAAABnGhBi_YROiwWOj" data-theme="dark"></div>
 
-      <button type="submit">Send Message</button>
+      <button type="submit" id="submitBtn" disabled>Send Message</button>
     </form>
   </div>
+
+  <script>
+    window.onload = () => {
+      window.turnstile && turnstile.render('.cf-turnstile', {
+        sitekey: '0x4AAAAAABnGhBi_YROiwWOj',
+        theme: 'dark',
+        callback: () => {
+          document.getElementById('submitBtn').disabled = false;
+        }
+      });
+    };
+
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+      const obj = {};
+      data.forEach((value, key) => obj[key] = value);
+
+      const response = await fetch('https://formspree.io/f/xanbbylk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(obj)
+      });
+
+      if (response.ok) {
+        form.reset();
+        alert("Message sent successfully.");
+      } else {
+        alert("Failed to send message.");
+      }
+    });
+  </script>
 </body>
 </html>
 
