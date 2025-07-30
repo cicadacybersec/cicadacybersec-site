@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CICADA SYSTEMS | RED TEAM OPS</title>
+  <title>CICADA SYSTEMS | RED TEAM DRILLS</title>
   <link rel="icon" href="data:," />
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
@@ -64,10 +64,11 @@
       border: 1px solid var(--glow-red);
       box-shadow: inset 0 0 10px #f5424210;
       margin-bottom: 2rem;
+      color: var(--txt-secondary);
     }
 
     .terminal::before {
-      content: ">> SYSTEM STATUS FEED";
+      content: ">> RED TEAM DRILL NOTICE";
       display: block;
       margin-bottom: 0.5rem;
       color: #ff8080;
@@ -78,6 +79,12 @@
       font-size: 0.95rem;
       color: var(--txt-secondary);
       margin-bottom: 0.5rem;
+    }
+
+    .support-email {
+      font-size: 0.95rem;
+      color: var(--txt-secondary);
+      margin-bottom: 1rem;
     }
 
     .support-btn {
@@ -145,6 +152,26 @@
       justify-content: center;
     }
 
+    .fallback-msg {
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--txt-secondary);
+      line-height: 1.6;
+    }
+
+    .insta-link {
+      color: var(--txt);
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .insta-link:hover {
+      text-decoration: underline;
+      color: #ff6b6b;
+    }
+
     @media (max-width: 600px) {
       h1 { font-size: 2rem; }
       p { font-size: 1rem; }
@@ -163,22 +190,18 @@
     </p>
 
     <div class="terminal">
-      > INIT RED_TEAM_OPS<br />
-      > Establishing encrypted comms... <span style="color:#0f0">[OK]</span><br />
-      > Beacon handshake validated<br />
-      > Perimeter breach simulation: <span style="color:orange">ACTIVE</span><br />
-      > SOC trace nullified<br />
-      > SIGINT link hardened<br />
-      > Exit node rotation in progress...
+      CICADA SYSTEMS is currently conducting a live red team drill to train our internal cybersecurity teams.<br><br>
+      These simulations are designed to mimic real-world cyber threats, identify vulnerabilities, and strengthen our digital infrastructure under pressure.<br><br>
+      During these exercises, public-facing services may be temporarily restricted to preserve simulation integrity.
     </div>
 
-<div class="support-desc">
-  24/7 emergency support for site crashes, attacks, or access issues:
-</div>
-<div class="support-email">
-  <strong>247support@cicadacybersec.com</strong>
-</div>
-<a href="mailto:247support@cicadacybersec.com" class="support-btn">Emergency Support</a>
+    <div class="support-desc">
+      24/7 Emergency support for site crashes, attacks, or access issues:
+    </div>
+    <div class="support-email">
+      <strong>247support@cicadacybersec.com</strong>
+    </div>
+    <a href="mailto:247support@cicadacybersec.com" class="support-btn">Emergency Support</a>
 
     <div class="form-heading">General Enquiries</div>
 
@@ -196,17 +219,21 @@
 
       <button id="submitBtn" type="submit" disabled>Send Message</button>
     </form>
+
+    <div class="fallback-msg">
+      Website services temporarily restricted during red team drills.<br>
+      For live pricing, availability, or updates - visit us on Instagram:<br>
+      <a href="https://instagram.com/cicadacybersecurity" target="_blank" class="insta-link">@cicadacybersecurity</a>
+    </div>
   </div>
 
   <script>
-    // Called when Turnstile is successfully passed
     function turnstileCallback() {
       const btn = document.getElementById("submitBtn");
       btn.disabled = false;
       btn.classList.add("enabled");
     }
 
-    // Prevent redirect — AJAX send
     document.getElementById("contactForm").addEventListener("submit", async function (e) {
       e.preventDefault();
 
