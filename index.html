@@ -18,16 +18,12 @@
 
     html, body {
       margin: 0;
-      padding: 0;
+      padding: 2rem 0;
       background: var(--bg);
       color: var(--txt);
       font-family: var(--font);
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 100vh;
       text-align: center;
-      flex-direction: column;
     }
 
     .frame {
@@ -37,6 +33,13 @@
       padding: 3rem 2rem;
       max-width: 700px;
       width: 90%;
+      margin: 0 auto;
+    }
+
+    .logo {
+      max-width: 130px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 4px var(--glow-red));
     }
 
     h1 {
@@ -71,8 +74,33 @@
       font-weight: bold;
     }
 
-    .contact {
-      margin-bottom: 2rem;
+    .support-desc {
+      font-size: 0.95rem;
+      color: var(--txt-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .support-btn {
+      display: inline-block;
+      margin: 1.5rem 0;
+      padding: 0.75rem 1.2rem;
+      font-size: 1rem;
+      color: #000;
+      background-color: var(--glow-red);
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .support-btn:hover {
+      background-color: #ff6b6b;
+    }
+
+    .form-heading {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
       color: var(--txt-secondary);
     }
 
@@ -120,11 +148,14 @@
 </head>
 <body>
   <div class="frame">
+    <img src="logo.png" alt="CICADA Logo" class="logo">
+
     <h1>⚠️ RED TEAM DRILL ACTIVE ⚠️</h1>
     <p>
       CICADA SYSTEMS infrastructure is under live operational lockdown.<br>
       Access is restricted to authorized personnel only.
     </p>
+
     <div class="terminal">
       > INIT RED_TEAM_OPS<br>
       > Establishing encrypted comms... <span style="color:#0f0">[OK]</span><br>
@@ -135,12 +166,12 @@
       > Exit node rotation in progress...
     </div>
 
-    <div class="contact">
-      <strong>Emergency Support:</strong><br>
-      <a href="mailto:247support@cicadacybersec.com" style="color: var(--txt); text-decoration: none;">
-        247support@cicadacybersec.com
-      </a>
+    <div class="support-desc">
+      24/7 emergency support for site crashes, attacks, or access issues:
     </div>
+    <a href="mailto:247support@cicadacybersec.com" class="support-btn">Emergency Support</a>
+
+    <div class="form-heading">General Enquiries</div>
 
     <form action="https://formspree.io/f/xanbbylk" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
