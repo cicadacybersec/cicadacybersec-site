@@ -1,0 +1,246 @@
+/* -----------------------------
+   Premium Dark Funnel Styling
+------------------------------ */
+
+:root {
+  --bg: #0e0f12;
+  --fg: #e0e0e0;
+  --accent: #1db954; /* green accent */
+  --accent-dark: #17a143;
+  --card-bg: #1a1c22;
+  --shadow: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2em 1em;
+  background: var(--bg);
+}
+
+.hero-inner {
+  max-width: 480px;
+}
+
+.badge.scarcity {
+  display: inline-block;
+  background: #ff3b30;
+  color: white;
+  padding: 0.4em 0.8em;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  margin-bottom: 1.5em;
+  opacity: 0.9;
+}
+
+/* CTA BUTTON */
+.btn-cta {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1.125rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* OFFER SECTION */
+.offer-section {
+  padding: 4em 1em;
+}
+
+.offer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2em;
+}
+
+.offer-card {
+  background: var(--card-bg);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px var(--shadow);
+  color: var(--fg);
+}
+
+.offer-card h2 {
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+}
+
+.offer-card ul {
+  list-style-type: disc;
+  padding-left: 1.2em;
+  color: #ccc;
+}
+
+.price-card {
+  text-align: center;
+}
+
+.price-card .price {
+  font-size: 2.75rem;
+  margin: 1em 0;
+  font-weight: bold;
+}
+
+/* TESTIMONIALS */
+.testimonials-section {
+  padding: 4em 1em;
+  background: #121316;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  margin-bottom: 2em;
+}
+
+.testimonials {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5em;
+}
+
+.testimonials blockquote {
+  background: var(--card-bg);
+  padding: 1.5em;
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  font-size: 1rem;
+  opacity: 0.95;
+  font-style: italic;
+}
+
+/* FAQ SECTION */
+.faq-section {
+  padding: 4em 1em;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-item + .faq-item {
+  margin-top: 1em;
+}
+
+.faq-question {
+  width: 100%;
+  background: var(--card-bg);
+  color: var(--fg);
+  padding: 1em;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--card-bg);
+  padding: 0 1em;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  font-size: 0.95rem;
+  color: var(--fg);
+}
+
+.faq-item.open .faq-answer {
+  max-height: 12em;
+  padding: 1em;
+}
+
+/* FOOTER */
+.footer {
+  padding: 3em 1em;
+  text-align: center;
+  background: var(--bg);
+  color: var(--fg);
+  border-top: 1px solid #1d1d1d;
+}
+
+.footer-inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.disclaimer {
+  margin-top: 1em;
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .offer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
