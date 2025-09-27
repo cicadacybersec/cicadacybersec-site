@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cicada Systems — Secure Demo Access</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --fg: #e9f6f0;
+      --accent: #00ffc8;
+      --accent-hover: #00e6b4;
+      --card-bg: #141414;
+    }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Segoe UI', Roboto, Inter, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: var(--card-bg);
+      padding: 40px 28px;
+      border-radius: 12px;
+      text-align: center;
+      width: 100%;
+      max-width: 360px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 0 20px rgba(0,255,200,0.15);
+    }
+    h2 {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    p.meta {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 22px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 14px;
+      border: none;
+      border-radius: 6px;
+      background: #1f1f1f;
+      color: var(--fg);
+      font-size: 0.95rem;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--accent);
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      color: var(--bg);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: var(--accent-hover);
+    }
+    #err {
+      color: #ff5c5c;
+      font-size: 0.85rem;
+      margin-top: 12px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Secure Demo Access</h2>
+    <p class="meta">Restricted preview — Cicada Systems</p>
+    <input id="pw" type="password" placeholder="Enter password">
+    <button onclick="check()">Access Demo</button>
+    <p id="err">Invalid password. Try again.</p>
+  </div>
+
+  <script>
+    // 🔑 Set the password for this demo
+    const correct = "cicada2025";
+
+    function check(){
+      const input = document.getElementById("pw").value;
+      if(input === correct){
+        // Redirect into the real demo
+        window.location.href = "site.html";
+      } else {
+        document.getElementById("err").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
+

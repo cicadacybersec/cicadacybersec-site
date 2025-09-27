@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cicada Systems — Demo Hub</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --fg: #e9f6f0;
+      --accent: #00ffc8;
+      --accent-hover: #00e6b4;
+      --card-bg: #141414;
+    }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Segoe UI', Roboto, Inter, sans-serif;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .wrap {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+    }
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+    a {
+      display: block;
+      padding: 16px;
+      border-radius: 10px;
+      background: var(--card-bg);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    a:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Cicada Systems — Demo Hub</h1>
+    <p>Preview builds, secured and delivered by our dev team.</p>
+    <div class="grid">
+      <a href="/camilla-demos/demo-1/">Demo 1 — Lead Gen</a>
+      <a href="/camilla-demos/demo-2/">Demo 2 — Funnel</a>
+      <a href="/camilla-demos/demo-3/">Demo 3 — Brandstarter</a>
+    </div>
+  </div>
+</body>
+</html>
+
