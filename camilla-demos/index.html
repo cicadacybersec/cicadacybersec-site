@@ -5,11 +5,11 @@
   <title>Cicada Systems — Demo Hub</title>
   <style>
     :root {
-      --bg: #0b0b0b;
-      --fg: #e9f6f0;
-      --accent: #00ffc8;
-      --accent-hover: #00e6b4;
-      --card-bg: #141414;
+      --bg: #000;
+      --fg: #e9e9e9;
+      --accent: #ff003c;
+      --accent-hover: #ff335c;
+      --card-bg: #111;
     }
     body {
       background: var(--bg);
@@ -47,15 +47,17 @@
       padding: 16px;
       border-radius: 10px;
       background: var(--card-bg);
-      color: var(--accent);
+      color: var(--fg);
       text-decoration: none;
       font-weight: 600;
       transition: all 0.25s ease;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 10px rgba(255,0,60,0.3);
     }
     a:hover {
       background: var(--accent);
       color: var(--bg);
+      box-shadow: 0 0 20px rgba(255,0,60,0.6);
     }
   </style>
 </head>
@@ -64,9 +66,9 @@
     <h1>Cicada Systems — Demo Hub</h1>
     <p>Preview builds, secured and delivered by our dev team.</p>
     <div class="grid">
-      <a href="/camilla-demos/demo-1/">Demo 1 — Lead Gen</a>
-      <a href="/camilla-demos/demo-2/">Demo 2 — Funnel</a>
-      <a href="/camilla-demos/demo-3/">Demo 3 — Brandstarter</a>
+      <a href="/camilla-demos/demo-1/">Demo 1 - Lead Gen</a>
+      <a href="/camilla-demos/demo-2/">Demo 2 - Funnel</a>
+      <a href="/camilla-demos/demo-3/">Demo 3 - Brandstarter</a>
     </div>
   </div>
 </body>
